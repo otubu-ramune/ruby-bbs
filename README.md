@@ -1,4 +1,8 @@
 # ruby-bbs
-gem install sanitize\n
+gem install sanitize
 sudo apt-get install libsqlite3-dev
 gem install sqlite3
+
+
+#how to rum
+ruby main.rb
