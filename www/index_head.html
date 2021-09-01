@@ -1,0 +1,109 @@
+<%# encoding: UTF-8 %>
+<html>
+  <meta name="viewport" content="width=device-width">
+    <head>
+      <link rel="stylesheet" type="text/css" href="css/reset.css">
+      <link rel="stylesheet" type="text/css" href="css/header.css">
+
+      <link rel="stylesheet" type="text/css" href="css/kohei.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script type="text/javascript" src="/js/kohei.js"></script>
+      <script type="text/javascript" src="/js/paginathing.min.js"></script> 
+    </head>
+
+
+    <header>
+      <div class="header-inner">
+        <h1 class="header-logo"></h1>
+          <img class="header-logoImg" src="images/test.png"> 
+          <span class="header-logoTtl"><%= bbs%></span>
+        </h1>
+
+        <nav class="header-nav">
+          <ul class="header-navList">　
+            <li>
+                <a class = "menu" href="/">スレッド一覧</a> 
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+    <title><%= id_to_name(bbs).force_encoding("UTF-8") %></title>
+    <body>
+      <center>
+        <h2 class="title"><%= id_to_name(bbs).force_encoding("UTF-8") %></h2>
+      </center>
+      
+
+
+      <div class="order">
+      <p hidden><a href="#" id="new-order">新しい順</a> / <a href="#" id="old-order">古い順</a> </p>
+    </div>
+
+
+
+      <div id="div1">
+        <center>
+        <label id = "auto_or_not" >自動更新OFF</label>
+      </center>
+      </div>
+      <div class="switchArea">
+        <input type="checkbox" id="switch1">
+        <label for="switch1"><span></span></label>
+        <div id="swImg"></div>
+      </div>
+
+      <hr>
+
+
+      <div id="toukou">
+      </div>
+      <!-- <p class="gotop-button">㊤</p> -->
+      <p id="pageTop"><a href="#">page top</a></p>
+
+
+
+
+            <!-- <script type="text/javascript" src="js/jquery-1.5.1.js"></script> -->
+            <div class="parent">
+              <!-- <h1>『<%= id_to_name(bbs).force_encoding("UTF-8") %>』</h1> -->
+              <br> 
+              <!-- <details> -->
+                <summary>投稿</summary> 
+            <form method="post" action="upload" enctype="multipart/form-data" name="form1" onSubmit="return check()" >
+              <input type="hidden" name="bbs" id="bbsname" value="<%= bbs.force_encoding("UTF-8") %>">
+              <label>お名前(10文字以内)*<br><input type="text" name="myname" value="<%= name.force_encoding("UTF-8") %>" maxlength="10"></label><br>
+              <label>コメント*<br><textarea id="tom" name="value" rows="4" cols="40"></textarea></label><br>
+              <label>カラー:
+              <input type="color" name="color">
+              </label><br><label>写真:
+              <input type="file" id="syasin" name="example1" accept=".jpg,.jpeg,.png"  onchange="previewImage(this);"></label>
+              <br>
+              <img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+              style="max-height:130px;">
+              </p>
+              <p><input type="submit" value="送信する" class="send-button"></p>
+              </form>
+            <!-- </details> -->
+              
+            </form>
+            <!-- <p><a href="#" id="button01">Ajax更新ボタン昇順</a></p>
+            <p><a href="#" id="button02">Ajax更新ボタン降順</a></p> -->
+            <!-- <p><a href="#" id="button03">自動更新ON</a></p>
+            <p><a href="#" id="button04">自動更新OFF</a></p> -->
+            <div id="loader" ><div id="loadingtxt"><p></p></div><img src="/loading.gif" width="35" height="35" /></div>
+      
+      
+      
+              
+
+            </div>
+
+      
+
+
+
+  </body>
+  </html>

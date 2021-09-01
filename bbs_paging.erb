@@ -1,0 +1,43 @@
+<div class="nav-links">
+ <script type="text/javascript">
+    var bbs=$('#bbsname');
+	var bbs_name =bbs.val();
+    function getPage(page_num){
+        // alert(document.form1.action+`${page_num}`);
+        document.form1.action = 'upload' + `${page_num}`
+
+        // $('#toukou').fadeOut(600, function() {
+                $.ajax({
+                    type: 'GET',
+                    url: `/SQL/old/${bbs_name}${page_num}`,
+                    dataType: 'html',
+                    success: function(data) {
+                        $('#toukou').html(data);
+                    },
+                    error:function() {
+                        alert('問題が発生しました。');
+                    }
+            });
+        // }
+
+	}
+ </script>
+    <% if page!=1%>
+    <a class="prev page-numbers" href="javascript:getPage('?p=<%= (page-1) %>');">«</a><!-- 現在の前のページへのリンク -->
+    <a class="page-numbers" href="javascript:getPage('?p=1');">1</a>
+    
+    <% end%>
+    <% if page>2%>
+    <span class="page-numbers dots">…</span>
+    <%end%>
+    <span class="page-numbers current"><%= page %></span><!-- 現在閲覧しているページ -->
+    <!-- <a class="page-numbers" href="/?p=<%= page+1 %>"><%= page+1 %></a> -->
+    <%cut =7.0%>
+    <%count =count_data_bbs(bbs)[0].to_i %>
+    <%count = count <1 ? 0.5 : count%>
+    <% if page!=(count/cut).ceil%>
+    <span class="page-numbers dots">…</span>
+    <a class="page-numbers" href="javascript:getPage('?p=<%= (count/cut).ceil %>');"><%=  (count/cut).ceil %></a>
+    <a class="next page-numbers" href="javascript:getPage('?p=<%= page+1 %>');">»</a><!-- 現在の次のページへのリンク -->
+    <% end%>
+</div>

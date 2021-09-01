@@ -1,0 +1,350 @@
+@charset "UTF-8";
+#content_main .article {
+	margin-top: 20px;
+}
+.article-info {
+	display: inline-block;
+	/* float: left; */
+	width: 100%;
+}
+#content_main .count {
+	background-color: #FFF687;
+	border-radius: 15px;
+	color: #000000;
+	padding: 5px 8px 5px 8px;
+}
+#content_main .time {
+	color: #8B8B8B;
+	margin-left: 1rem;
+}
+#content_main{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  
+}c
+form {
+  display: inline-block;
+  text-align: left;
+}
+
+/*  ページング部分--------------------------------------------*/
+.nav-links{
+  padding:2em;
+  display:flex;
+  justify-content:center;
+  background:#f3f3f3;
+
+  
+}
+a.page-numbers{
+  width:50px;
+  height:50px;
+  margin:2px;
+  line-height:50px;
+  text-align:center;
+  font-size:14px;
+  font-weight:bold;
+  text-decoration:none;
+  background:#fff;
+  color:#222;
+  transition:.3s;
+}
+span.page-numbers {
+  width:50px;
+  height:50px;
+  margin:2px;
+  line-height:50px;
+  text-align:center;
+  font-size:14px;
+  font-weight:bold;
+  text-decoration:none;
+  background:#fff;
+  color:#222;
+  transition:.3s;
+}
+a.page-numbers:hover{
+  background:gold;
+  border-radius:100%;
+  transform:rotate(360deg);
+}
+span.current{
+  background:gold;
+  border-radius:100%;
+}
+.dots{
+  background:none;
+}
+/*  ページング部分以上---------------------------------------*/
+.article{
+  width: 100%;
+  margin-bottom: 10px; 
+  border: 1px  #333333; 
+  background-color: #ffffff; 
+  color: #000000;
+  overflow-wrap: break-word;
+  border-radius: 10px;
+  margin:5px
+}
+@media (max-width: 550px){
+  #content_main{
+    width:90%
+  }
+
+}
+h2.title {
+  width: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0.5em;/*文字周りの余白*/
+  color: #494949;/*文字色*/
+  background: #fffaf4;/*背景色*/
+  border-left: solid 5px #2825e9;/*左線（実線 太さ 色）*/
+}
+
+button[id^="bbs"] {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+/* スレッド一覧終わり--------------------------------------------------- */
+
+
+
+img.upload-photo {
+    width: 200px; height: auto; 
+}
+img.preview{
+    max-height:70px;
+}
+.parent{
+    text-align: center;
+}
+p.sample1 {
+    background-color: #f8dce0;
+    padding: 10px;}
+
+body{
+  background: #ebebeb;
+}
+.nf{
+  overflow-wrap: anywhere;
+  color: #006666;
+}
+
+#threadname {
+  display: block;
+  width: 10ch;
+  font-family: "Consolas";
+  /* , Consolas, monospace; */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@media (max-width: 450px){
+  .thread-list {
+      display: block;
+      overflow-x: scroll;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+}
+
+
+.thread-list{
+  background: #fff;
+  table-layout: auto;
+}
+
+div[class^="post"]{
+    /* display:inline-block; */
+    text-align: left;
+    /* padding: 10px;  */
+    
+    border: 1px dashed #333333; 
+    /* background-color: #5fc2ac;  */
+    color: #000000;
+    overflow-wrap: break-word;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px; 
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+
+    /* margin-left: 5em;
+    margin-right: 5em; */
+}
+
+.order{
+    text-align: right;
+    margin-right:1em;
+}
+
+.parent label{
+  vertical-align: top;
+  margin-right: 5px;
+}
+
+
+
+p.naiyou{
+    text-align: left;
+}
+#loader img{
+    visibility:hidden;
+}
+
+.send-button {
+    display       : inline-block;
+    border-radius : 20%;          /* 角丸       */
+    font-size     : 18pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 13px;   /* 余白       */
+    background    : #006666;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 4px 4px 3px #666666;  /* 影の設定 */
+    border        : 2px solid #006666;    /* 枠の指定 */
+  }
+  .send-button:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #006666;     /* 背景色     */
+    background    : #ffffff;     /* 文字色     */
+  }
+
+
+
+  .switchArea {
+    line-height    : 60px;                /* 1行の高さ          */
+    letter-spacing : 0;                   /* 文字間             */
+    text-align     : center;              /* 文字位置は中央     */
+    font-size      : 27px;                /* 文字サイズ         */
+  
+    position       : relative;            /* 親要素が基点       */
+    margin         : auto;                /* 中央寄せ           */
+    width          : 150px;               /* ボタンの横幅       */
+    background     : #ebebeb;                /* デフォルト背景色   */
+  }
+  
+   /* === チェックボックス ==================================== */
+  .switchArea input[type="checkbox"] {
+    display        : none;            /* チェックボックス非表示 */
+  }
+  
+   /* === チェックボックスのラベル（標準） ==================== */
+  .switchArea label {
+    display        : block;               /* ボックス要素に変更 */
+    box-sizing     : border-box;          /* 枠線を含んだサイズ */
+    height         : 60px;                /* ボタンの高さ       */
+    border         : 2px solid #999999;   /* 未選択タブのの枠線 */
+    border-radius  : 30px;                /* 角丸               */
+  }
+  
+   /* === チェックボックスのラベル（ONのとき） ================ */
+  .switchArea input[type="checkbox"]:checked +label {
+    border-color   : #003300;             /* 選択タブの枠線     */
+  }
+  
+   /* === 表示する文字（標準） ================================ */
+  .switchArea label span:after{
+    content        : "OFF";               /* 表示する文字       */
+    padding        : 0 0 0 36px;          /* 表示する位置       */
+    color          : #999999;             /* 文字色             */
+  }
+  
+   /* === 表示する文字（ONのとき） ============================ */
+  .switchArea  input[type="checkbox"]:checked + label span:after{
+    content        : "ON";                /* 表示する文字       */
+    padding        : 0 36px 0 0;          /* 表示する位置       */
+    color          : #000000;             /* 文字色             */
+  }
+  
+   /* === 丸部分のSTYLE（標準） =============================== */
+  .switchArea #swImg {
+    position       : absolute;            /* 親要素からの相対位置*/
+    width          : 52px;                /* 丸の横幅           */
+    height         : 52px;                /* 丸の高さ           */
+    background     : #999999;             /* カーソルタブの背景 */
+    top            : 4px;                 /* 親要素からの位置   */
+    left           : 4px;                 /* 親要素からの位置   */
+    border-radius  : 26px;                /* 角丸               */
+    transition     : .2s;                 /* 滑らか変化         */
+  }
+  
+   /* === 丸部分のSTYLE（ONのとき） =========================== */
+  .switchArea input[type="checkbox"]:checked ~ #swImg {
+    transform      : translateX(90px);    /* 丸も右へ移動       */
+    background     : #238f19;             /* カーソルタブの背景 */
+  }
+
+
+
+  
+  .gotop-button{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    font-size: 50px;
+    color: #fff;
+    background: #000;
+    padding: 10px;
+    cursor: pointer;
+    transition: .3s;
+    
+    /*デフォルトで非表示にする*/
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  /*このクラスが付与されると表示する*/
+  .active{
+    opacity: 1;
+    visibility: visible;
+  }
+
+
+  #pageTop {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+  }
+  
+   
+  
+  #pageTop i {
+    padding-top: 6px
+  }
+  
+   
+  
+  #pageTop a {
+    display: block;
+    z-index: 999;
+    padding: 8px 0 0 1px;
+    border-radius: 30px;
+    width: 55px;
+    height: 55px;
+    background-color: #9FD6D2;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+   
+  
+  #pageTop a:hover {
+    text-decoration: none;
+    opacity: 0.7;
+  }
+
+  #toukou{
+    display:flex;
+    flex-direction:column;
+  }

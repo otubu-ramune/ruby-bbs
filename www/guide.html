@@ -1,0 +1,103 @@
+<%# encoding: UTF-8 %>
+<html>
+    <head>
+      <!-- https://web-loid.net/web/header-create/ -->
+      <meta name="viewport" content="width=device-width">
+      <link rel="stylesheet" type="text/css" href="/css/reset.css">
+      <link rel="stylesheet" type="text/css" href="/css/header.css">
+      <link rel="stylesheet" type="text/css" href="/css/kohei.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+          <script type="text/javascript" src="/js/guide.js"></script>
+          <script type="text/javascript" src="/js/paginathing.min.js"></script> 
+          <script type="text/javascript" src="/js/md5.js"></script> 
+    </head>
+
+    <header>
+      <div class="header-inner">
+        <h1 class="header-logo"></h1>
+        <span class="yobun"></span>
+          <img class="header-logoImg" src="images/test.png"> 
+          <a href="/?p=1" style="color: white;text-decoration: none;"> <span class="header-logoTtl">スレッド一覧</span></a>
+          <img class="header-logoImg" src="images/test.png"> 
+        </h1>
+
+        <!-- <nav class="header-nav">
+          <ul class="header-navList">　
+            <li>
+                <a class = "menu" href="/">新規作成</a> 
+            </li>
+          </ul>
+        </nav> -->
+      </div>
+    </header>
+    <!-- <header class="guide">
+      <div class="header-inner">
+        <h1>   
+          <img class="ha" src="/images/test.png"> 
+          <span class="header-logoTtl">スレッド一覧</span>
+          <img class="ha" src="/images/test.png"> 
+        </h1>
+      </div>
+    </header> -->
+    <br> 
+
+    <title>スレッド一覧</title>
+    <body>
+      <!-- <script type="text/javascript" src="js/jquery-1.5.1.js"></script> -->
+      <div class="parent">
+        <details>
+          <summary>スレッド新規作成</summary>
+      <form method="post" action="make" enctype="multipart/form-data" onsubmit="return check();" >
+        <label>新規スレ作成<br><input type="text" id="tom" name="bbsname" style="width:230px;height:30px;"></label><br>
+        <label>パスワード(半角英数字)<br><input type="password" id ="pass" name="password" value=""  style="width:230px;height:30px;"></label><br>
+        
+        <p><input type="submit" value="作成" class="send-button"></p>
+      </form>
+    </details>
+      <br>
+
+       <% bbs_list = print_bbs_list() %>
+      <!--<% bbs_list.each do |name| %>
+      <a href="<%= name %>"><%= name %></a><br>
+      <% end %> -->
+
+    
+    <% bbs_list = print_bbs_list_range(page) %>
+    <% bbs_list.each do |name| %>
+    <div id="content_main">
+      <article class="article">
+        <div class="article-info">
+          <h3><a id="<%= name%>" href="/<%= name %>"><%= id_to_name(name) %></a></h3>
+          <% array = count_data_bbs(name)%> 
+          <span class="count"><%= array[0] %>投稿</span>
+          <time class="time"><%= array[2] %></time>
+          <p><button class = "delete" id = "<%= name%>"><img src="/images/gomi.png"></button></p>
+        </div>
+      </article>
+    </div>
+
+    <% end %>
+
+    
+    <div class="nav-links">
+      <% if page!=1%>
+      <a class="prev page-numbers" href="?p=<%= page-1 %>">«</a><!-- 現在の前のページへのリンク -->
+      <a class="page-numbers" href="?p=1">1</a>
+      <% end%>
+      <% if page>2%>
+      <span class="page-numbers dots">…</span>
+      <%end%>
+      <span class="page-numbers current"><%= page %></span><!-- 現在閲覧しているページ -->
+      <!-- <a class="page-numbers" href="/?p=<%= page+1 %>"><%= page+1 %></a> -->
+      <%cut =3.0%>
+      <% if page!=(print_bbs_name.size/cut).ceil%>
+      <span class="page-numbers dots">…</span>
+      <a class="page-numbers" href="?p=<%= (print_bbs_name.size/cut).ceil %>"><%= (print_bbs_name.size/cut).ceil %></a>
+      <a class="next page-numbers" href="?p=<%= page+1 %>">»</a><!-- 現在の次のページへのリンク -->
+      <% end%>
+    </div>
+
+
+      <p id="pageTop"><a href="#">page top</a></p>
+  </body>
+  </html>

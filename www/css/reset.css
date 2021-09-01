@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* ============================================================================
+ Update: 2010/01/05
+ reset用CSS
+============================================================================= */
+/* *, *:before, *:after {
+	box-sizing:border-box;
+	 -moz-box-sizing: border-box;
+ 	-webkit-box-sizing: border-box;
+} */
+body
+/* , a, address, img, strong, figure,
+del, ins, dfn, em, abbr, acronym, kbd, q, pre, cite, code, samp, sub, sup, var,
+fieldset, form, label, legend,
+table,thead, tbody, tfoot, tr, th, td, caption
+, dl, dt, dd, ol, ul, li */
+{
+ margin: 0;
+ border: 0;
+ padding: 0;
+ background: transparent;
+ font-style: normal;
+ font-weight: normal;
+ font-size: 100%;
+}
+
+/* html{ overflow-y: scroll;}
+
+ol, ul{ list-style: none;} */
+
+/* hr{ display: none;} */
+
+/* del, ins{ text-decoration: none;}
+
+blockquote, q{ quotes: none;}
+
+ table{
+ border-collapse: collapse;
+ border-spacing: 0;
+}  */
+
+
+/* .clearfix:after{
+  content: ".";
+  display: block;
+  height: 0;
+  font-size:0;
+  clear: both;
+  visibility:hidden;
+} */
